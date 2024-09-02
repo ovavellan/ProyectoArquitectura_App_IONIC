@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Aviones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="container">
+    <div class="contenedor_tabla">
+      <h1>Lista de Aviones</h1>
+      <table mat-table [dataSource]="avionesLista" class="mat-elevation-z8">
+
+      <!-- Columnas definidas -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let element"> {{ element.avion.id }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nombre_aeronave">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{ element.avion.nombre_aeronave }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="company">
+        <th mat-header-cell *matHeaderCellDef> Compañía </th>
+        <td mat-cell *matCellDef="let element"> {{ element.avion.company }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="capacidad_pasajeros">
+        <th mat-header-cell *matHeaderCellDef> Capacidad </th>
+        <td mat-cell *matCellDef="let element"> {{ element.avion.capacidad_pasajeros }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="horas_vuelo">
+        <th mat-header-cell *matHeaderCellDef> Horas de Vuelo </th>
+        <td mat-cell *matCellDef="let element"> {{ element.avion.horas_vuelo }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="piloto">
+        <th mat-header-cell *matHeaderCellDef> Piloto </th>
+        <td mat-cell *matCellDef="let element"> {{ element.piloto.name + ' ' + element.piloto.lastname }} </td>
+      </ng-container>
+
+      <!-- Fila de encabezado -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <!-- Fila de datos -->
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>
+</ion-content>

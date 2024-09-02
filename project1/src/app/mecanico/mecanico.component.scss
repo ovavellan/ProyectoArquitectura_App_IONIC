@@ -1,0 +1,84 @@
+.container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor_tabla {
+  width: 100%;
+  max-width: 1200px; // Ajusta según tu diseño
+  background-color: #ffffff; // Color de fondo blanco
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow:
+    0px 8px 10px rgba(0, 0, 0, 0.2),
+    -10px -10px 10px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    text-align: center;
+    color: #3f51b5; // Color primario de Material Design
+  }
+
+  .mat-table {
+    width: 100%;
+
+    .mat-header-cell {
+      background-color: #3f51b5; // Color primario de Material Design
+      color: #ffffff; // Color blanco para texto
+      font-weight: bold;
+    }
+
+    .mat-cell {
+      text-align: center;
+    }
+
+    .mat-row:nth-child(odd) {
+      background-color: #f5f5f5; // Color de fondo para filas alternas
+    }
+  }
+}
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .container {
+    padding: 5px;
+  }
+
+  .contenedor_tabla {
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .mat-table {
+    .mat-header-cell, .mat-cell {
+      font-size: 0.8em; // Reducir tamaño de fuente en pantallas más pequeñas
+    }
+
+    .mat-cell {
+      padding: 3px; // Reducir aún más el padding
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0;
+  }
+
+  .contenedor_tabla {
+    padding: 0;
+    border-radius: 3px;
+  }
+
+  .mat-table {
+    .mat-header-cell, .mat-cell {
+      font-size: 0.7em; // Reducir tamaño de fuente en pantallas muy pequeñas
+    }
+
+    .mat-cell {
+      padding: 2px; // Reducir padding en pantallas muy pequeñas
+    }
+  }
+}

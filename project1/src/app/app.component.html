@@ -1,0 +1,19 @@
+<ion-app>
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item routerLink="/estadisticas" routerDirection="root">Estadísticas</ion-item>
+        <ion-item routerLink="/pilotos" routerDirection="root">Pilotos</ion-item>
+        <ion-item routerLink="/aviones" routerDirection="root">Aviones</ion-item>
+        <ion-item routerLink="/mecanicos" routerDirection="root">Mecánicos</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-app>

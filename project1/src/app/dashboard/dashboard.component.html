@@ -1,0 +1,89 @@
+<ion-app>
+
+
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Estadísticas de Aviación Civil</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="ion-padding">
+      <ion-grid>
+        <ion-row>
+          <!-- Gráfico 1 -->
+          <ion-col size="12" size-md="6">
+            <ion-card>
+              <ion-card-header>
+                <ion-card-title>Gráfico 1: Cantidad de Pilotos por Año de Emisión de Licencia</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <ion-item>
+                  <ion-label position="floating">Año:</ion-label> <br>
+                  <ion-input [(ngModel)]="year1" type="number" placeholder="Ingrese el año"></ion-input>
+                </ion-item>
+                <ion-button expand="block" (click)="fetchKPI1()">Obtener Gráfico 1</ion-button>
+                <ion-img *ngIf="plotUrl1" [src]="plotUrl1"></ion-img>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+
+          <!-- Gráfico 2 -->
+          <ion-col size="12" size-md="6">
+            <ion-card>
+              <ion-card-header>
+                <ion-card-title>Gráfico 2: Horas de Vuelo Acumuladas en el Mes y Año</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <ion-item>
+                  <ion-label position="floating">Año:</ion-label> <br>
+                  <ion-input [(ngModel)]="year2" type="number" placeholder="Ingrese el año"></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label position="floating">Mes:</ion-label>
+                  <ion-select [(ngModel)]="month">
+                    <ion-select-option value="" disabled>Seleccione el mes</ion-select-option>
+                    <ion-select-option value="1">Enero</ion-select-option>
+                    <ion-select-option value="2">Febrero</ion-select-option>
+                    <ion-select-option value="3">Marzo</ion-select-option>
+                    <ion-select-option value="4">Abril</ion-select-option>
+                    <ion-select-option value="5">Mayo</ion-select-option>
+                    <ion-select-option value="6">Junio</ion-select-option>
+                    <ion-select-option value="7">Julio</ion-select-option><ion-select-option value="1">Enero</ion-select-option>
+                    <ion-select-option value="8">Agosto</ion-select-option>
+                    <ion-select-option value="9">Septiembre</ion-select-option>
+                    <ion-select-option value="10">Octubre</ion-select-option>
+                    <ion-select-option value="11">Noviembre</ion-select-option>
+                    <ion-select-option value="12">Diciembre</ion-select-option>
+                  </ion-select>
+                </ion-item>
+                <ion-button expand="block" (click)="fetchKPI2()">Obtener Gráfico 2</ion-button>
+                <ion-img *ngIf="plotUrl2" [src]="plotUrl2"></ion-img>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+
+          <!-- Gráfico 3 -->
+          <ion-col size="12">
+            <ion-card>
+              <ion-card-header>
+                <ion-card-title>Gráfico 3: Número Total de Vuelos por Año</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <ion-item>
+                  <ion-label position="floating">Año:</ion-label> <br>
+                  <ion-input [(ngModel)]="year3" type="number" placeholder="Ingrese el año"></ion-input>
+                </ion-item>
+                <ion-button expand="block" (click)="fetchKPI3()">Obtener Gráfico 3</ion-button>
+                <ion-img *ngIf="plotUrl3" [src]="plotUrl3"></ion-img>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-content>
+  </div>
+</ion-app>
